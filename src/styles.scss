@@ -22,6 +22,66 @@ input {
   }
 }
 
+.btn {
+  background: #30a7d7;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  max-width: 16rem;
+  width: 12rem;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 500;
+  margin: 0.6rem;
+  cursor: pointer;
+  transition: background 0.3s linear;
+
+  &:hover {
+    background: #1b82b1;
+  }
+
+  &--success {
+    background: #4dad5b;
+    &:hover {
+      background: #369143;
+    }
+  }
+
+  &--warning {
+    background: #ee6b2f;
+    &:hover {
+      background: #da471b;
+    }
+  }
+
+  &--error {
+    background: #e3350d;
+    &:hover {
+      background: #d1300c;
+    }
+  }
+}
+
+.pokedex {
+  background: url('./assets/img/pokedex.svg') no-repeat;
+  height: 3rem;
+  width: 3rem;
+}
+
+.title {
+  color: #fff;
+  margin: 1rem;
+  font-size: 3rem;
+}
+
+.panel {
+  background: #313131;
+  &--header {
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+  }
+}
+
 .card-container {
   display: flex;
   flex-wrap: wrap;
