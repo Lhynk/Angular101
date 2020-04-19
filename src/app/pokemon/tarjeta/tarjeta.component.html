@@ -1,0 +1,7 @@
+<div class="card-container">
+  <div class="pokemon" *ngFor="let pokemon of pokemon">
+    <img [src]="pokemon.art_url" class="pokemon__image pokemon__image--small" />
+    <div class="pokemon__number">N.° {{ pokemon.id }}</div>
+    <div class="pokemon__name pokemon__name--bold">{{ pokemon.name }}</div>
+  </div>
+</div>
