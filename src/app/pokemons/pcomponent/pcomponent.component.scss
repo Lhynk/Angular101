@@ -1,0 +1,58 @@
+.pokemon {
+    position: relative;
+    padding: 1rem;
+    background: #fff;
+    box-shadow: 0px 0px 3px 0px #ccc;
+    border-radius: 0.2rem;
+    transition: 0.5s;
+    margin: 1.2rem;
+    cursor: pointer;
+  
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url("../../../assets/img/back_bg.png");
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      border-radius: 0.2rem;
+      transition: transform 0.5s;
+    }
+  
+    &__image {
+      background: #f2f2f2;
+      border-radius: 0.5rem;
+  
+      &--small {
+        max-width: 12rem;
+      }
+      &--medium {
+        max-width: 18rem;
+      }
+      &--big {
+        max-width: 24rem;
+      }
+    }
+  
+    &__number {
+      color: #919191;
+      font-weight: 500;
+      margin: 0.1rem 0.4rem;
+    }
+    &__name {
+      font-size: 1.5rem;
+    }
+  
+    &__number,
+    &__name {
+      margin: 0.1rem 0.4rem;
+    }
+  
+    &:hover {
+      &:after {
+        transform: rotate(10deg);
+      }
+    }
+  }

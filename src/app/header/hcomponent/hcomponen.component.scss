@@ -1,0 +1,19 @@
+.title {
+    color: #fff;
+    margin: 1rem;
+    font-size: 3rem;
+  }
+  .pokedex {
+    background: url('../../../assets/img/pokedex.svg') no-repeat;
+    height: 3rem;
+    width: 3rem;
+  }
+  
+  .panel {
+    background: #313131;
+    &--header {
+      min-height: 5rem;
+      display: flex;
+      align-items: center;
+    }
+  }
