@@ -9,7 +9,7 @@ import { HComponenComponent } from './hcomponent/hcomponen.component';
   imports: [
     CommonModule
   ],
-  exports:[
+  exports:[ //se necesita agregar este export para que pueda ser leeido desde otros modulos
     HComponenComponent
   ]
 })
