@@ -1,8 +1,23 @@
-
 <div class="card-container">
-    <div class="pokemon" *ngFor="let pokemon of pokemones">
-      <img [src]="pokemon.art_url" class="pokemon__image pokemon__image--small" />
-      <div class="pokemon__number">N.° {{ pokemon.id }}</div>
-      <div class="pokemon__name pokemon__name--bold">{{ pokemon.name }}</div>
+  <div class="pokemon" *ngFor="let pokemon of pokemones">
+    <!--ngFor es un foreach, let *cualquierVariable* of *ArregloVariables*-->
+    <!--*ngIf es una validacion de una exprecion, osease un if normal-->
+    <div *ngIf="pokemon.art_url">
+      <img
+        [src]="pokemon.art_url"
+        class="pokemon__image pokemon__image--small"
+      />
     </div>
+    <div *ngIf="!pokemon.art_url">
+      <img
+        [src]="pokemon.art_urlA"
+        class="pokemon__image pokemon__image--small"
+      />
+    </div>
+    <div class="pokemon__number">N.° {{ pokemon.id }}</div>
+    <div class="pokemon__types">Tipo: {{ pokemon.types }}</div>
+    <div class="pokemon__name pokemon__name--bold">{{ pokemon.name }}</div>
+    <div *ngIf="pokemon.weak_to" class="pokemon__weak">Debil contra: {{ pokemon.weak_to }}</div>
+    <!--*ngIf="expresion booleana" lo que pasa si es verdad -->
   </div>
+</div>

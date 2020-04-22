@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { IPokemon } from './IPokemon';
 
 @Component({
   selector: 'pkd-pcomponent',
   templateUrl: './pcomponent.component.html',
-  styleUrls: ['./pcomponent.component.scss']
+  styleUrls: ['./pcomponent.component.scss'],
 })
 export class PComponentComponent implements OnInit {
-
-  constructor() { }
-  pokemones = [
+  //implements te obliga a meter un metodo de a fuerza, tipo interfaz
+  //se necesita decir que es un arreglo y no solo uno, para que lo tome de uno por uno
+  pokemones: IPokemon[] = [
     {
       id: 150,
       name: 'Mewtwo',
@@ -19,6 +20,7 @@ export class PComponentComponent implements OnInit {
       art_url:
         'http://assets22.pokemon.com/assets/cms2/img/pokedex/full/150.png',
       types: ['psychic'],
+      weak_to:['Psychic','Ghost'],
     },
     {
       id: 151,
@@ -27,9 +29,11 @@ export class PComponentComponent implements OnInit {
         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png',
       description:
         'Mew is said to possess the genetic composition of all Pokémon. It is capable of making itself invisible at will, so it entirely avoids notice even if it approaches people.',
-      art_url:
-        'http://assets22.pokemon.com/assets/cms2/img/pokedex/full/151.png',
+      //art_url:
+        //'http://assets22.pokemon.com/assets/cms2/img/pokedex/full/151.png',
       types: ['psychic'],
+      weak_to:['Psychic','Ghost','Bug','Dark'],
+      art_urlA: "https://pbs.twimg.com/media/DoU9TS4UYAAKxtZ?format=jpg&name=small"
     },
     {
       id: 144,
@@ -41,6 +45,8 @@ export class PComponentComponent implements OnInit {
       art_url:
         'http://assets22.pokemon.com/assets/cms2/img/pokedex/full/144.png',
       types: ['flying', 'ice'],
+      weak_to:['Rock','Fire'],
+      art_urlA: "https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png",
     },
     {
       id: 145,
@@ -52,6 +58,7 @@ export class PComponentComponent implements OnInit {
       art_url:
         'http://assets22.pokemon.com/assets/cms2/img/pokedex/full/145.png',
       types: ['flying', 'electric'],
+
     },
     {
       id: 146,
@@ -65,7 +72,8 @@ export class PComponentComponent implements OnInit {
       types: ['flying', 'fire'],
     },
   ];
-  ngOnInit(): void {
-  }
 
+  constructor() {}
+
+  ngOnInit(): void {}
 }
