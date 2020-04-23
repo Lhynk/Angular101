@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokeheader.component.scss']
 })
 export class PokeheaderComponent implements OnInit {
+  title: string = 'Pokedets';
 
   constructor() { }
 

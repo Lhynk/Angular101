@@ -1,7 +1,16 @@
+<div *ngIf="hayMensaje" class="pokemon__name pokemon__name--bold">{{mensaje}}</div>
 <div class="card-container">
     <div class="pokemon" *ngFor="let pokemon of pokemon">
-    <img [src]="pokemon.art_url" class="pokemon__image pokemon__image--small" />
-    <div class="pokemon__number">N.° {{ pokemon.id }}</div>
-    <div class="pokemon__name pokemon__name--bold">{{ pokemon.name }}</div>
+        <ng-container *ngIf="pokemon.art_url">
+            <img [src]="pokemon.art_url" class="pokemon__image pokemon__image--small" />
+            <div class="pokemon__number">N.° {{ pokemon.id }}</div>
+            <div class="pokemon__name pokemon__name--bold">{{ pokemon.name }}</div>
+            <ng-container *ngIf="pokemon.weakness">
+                <div class="">Weak against:</div>
+                <div *ngFor="let wk of pokemon.weakness">
+                    <div class="pokemon__number"> {{wk}} </div>
+                </div>
+            </ng-container>
+        </ng-container>
     </div>
 </div>
