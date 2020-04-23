@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+  title : string;
 
-  constructor() { }
+  constructor() { 
+    this.title = "Pokedex construtor";
+  }
 
   ngOnInit(): void {
   }

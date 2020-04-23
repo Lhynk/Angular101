@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { pokemon } from './pokemon';
+
 
 @Component({
   selector: 'pkd-tarjeta',
@@ -6,23 +8,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tarjeta.component.scss']
 })
 export class TarjetaComponent implements OnInit {
-  title = "Pokedex";
-  pokemon = [
+  titleYes: string = "No toca bashe contra";
+  titleNo: string = "Pokemon menor";
+
+  titleBool: boolean;
+
+  pokemonList: pokemon[] = [
     {
       "id": 149,
       "name": "Dragonite",
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/149.png",
       "description": "Dragonite is capable of circling the globe in just 16 hours. It is a kindhearted Pokémon that leads lost and foundering ships in a storm to the safety of land.",
       "art_url": "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/149.png",
-      "types": ["flying", "dragon"]
+      "types": ["flying", "dragon"],
+      "weakness": ["rock"]
     },
     {
       "id": 38,
       "name": "Ninetales",
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/38.png",
       "description": "Legend has it that Ninetales came into being when nine wizards possessing sacred powers merged into one. This Pokémon is highly intelligent—it can understand human speech.",
-      "art_url": "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/038.png",
-      "types": ["fire"]
+      //"art_url": "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/038.png",
+      "types": ["fire"],
+      "weakness": ["fire", "flying"]
     },
     {
       "id": 133,
@@ -46,7 +54,8 @@ export class TarjetaComponent implements OnInit {
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/124.png",
       "description": "Jynx walks rhythmically, swaying and shaking its hips as if it were dancing. Its motions are so bouncingly alluring, people seeing it are compelled to shake their hips without giving any thought to what they are doing.",
       "art_url": "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/124.png",
-      "types": ["ice", "psychic"]
+      "types": ["ice", "psychic"],
+      "weakness": ["fire", "flying"]
     },
     {
       "id": 27,
@@ -58,7 +67,9 @@ export class TarjetaComponent implements OnInit {
     },
   ];
 
-  constructor() { }
+  constructor() { 
+    this.titleBool = false;
+  }
 
   ngOnInit(): void {
   }
