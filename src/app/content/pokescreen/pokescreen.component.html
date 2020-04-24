@@ -1,16 +1,53 @@
 <div *ngIf="hayMensaje" class="pokemon__name pokemon__name--bold">{{mensaje}}</div>
+<div>
+    <button (click)="showWeakness()" class="button button3">Pokemon Weakness</button>
+</div>
+<div class="data" *ngIf="isVisible">
+    <div class="data__container">
+        <div>
+            <img [src]="image" class="data__image" />
+        </div>
+        <p class="data__info">
+            {{description}}
+        </p>
+    </div>
+    <div 
+        class="data__close"
+        (click)="hideBanner(false)"
+    >(X)
+    </div>
+</div>
 <div class="card-container">
-    <div class="pokemon" *ngFor="let pokemon of pokemon">
+    <div 
+    class="pokemon" 
+    *ngFor="let pokemon of pokemons"
+    (click)="displayBanner(pokemon)"
+    >
         <ng-container *ngIf="pokemon.art_url">
             <img [src]="pokemon.art_url" class="pokemon__image pokemon__image--small" />
             <div class="pokemon__number">N.° {{ pokemon.id }}</div>
             <div class="pokemon__name pokemon__name--bold">{{ pokemon.name }}</div>
-            <ng-container *ngIf="pokemon.weakness">
+            <ng-container *ngIf="pokemon.types">
+                <div class="">Type:</div>
+                    <div class="pokemon__type">
+                        <span [ngClass]="type" *ngFor="let type of pokemon.types">
+                            {{ type }}
+                        </span>
+                    </div>
+            </ng-container>
+            <ng-container *ngIf="isWeaknessVisible">
                 <div class="">Weak against:</div>
-                <div *ngFor="let wk of pokemon.weakness">
-                    <div class="pokemon__number"> {{wk}} </div>
-                </div>
+                    <div class="pokemon__type">
+                        <span [ngClass]="weak" *ngFor="let weak of pokemon.weakness">
+                            {{ weak }}
+                        </span>
+                    </div>
             </ng-container>
         </ng-container>
     </div>
+</div>
+<div *ngIf="false">
+    <p class="pokemon__description">
+        {{ description }}
+    </p>
 </div>

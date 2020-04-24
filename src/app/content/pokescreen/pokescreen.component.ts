@@ -9,7 +9,12 @@ import { Pokemon } from './pokemon';
 export class PokescreenComponent implements OnInit {
   hayMensaje: boolean = true;
   mensaje: string = 'quién es ese pokemon?';
-  pokemon: Pokemon[] = [
+  description: string = '';
+  image: string = '';
+  isVisible: boolean = false;
+  isWeaknessVisible: boolean = false;
+
+  pokemons: Pokemon[] = [
     {
       "id": 7,
       "name": "Squirtle",
@@ -17,13 +22,14 @@ export class PokescreenComponent implements OnInit {
       "description": "Squirtle's shell is not merely used for protection. The shell's rounded shape and the grooves on its surface help minimize resistance in water, enabling this Pokémon to swim at high speeds.",
       "art_url": "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/007.png",
       "types": ["water"],
-      "weakness": ["plant","electric"]
+      "weakness": ["grass","electric"]
     },
     {
       "id": 17,
       "name": "Pidgeotto",
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png",
       "description": "Pidgeotto claims a large area as its own territory. This Pokémon flies around, patrolling its living space. If its territory is violated, it shows no mercy in thoroughly punishing the foe with its sharp claws.",
+      "art_url": "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/017.png",
       "types": ["normal", "flying"],
       "weakness": ["electric"]
     },
@@ -34,7 +40,7 @@ export class PokescreenComponent implements OnInit {
       "description": "Meowth withdraws its sharp claws into its paws to slinkily sneak about without making any incriminating footsteps. For some reason, this Pokémon loves shiny coins that glitter with light.",
       "art_url": "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/052.png",
       "types": ["normal"],
-      "weakness": ["fight"]
+      "weakness": ["fighting"]
     },
     {
       "id": 59,
@@ -42,7 +48,8 @@ export class PokescreenComponent implements OnInit {
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/59.png",
       "description": "Arcanine is known for its high speed. It is said to be capable of running over 6,200 miles in a single day and night. The fire that blazes wildly within this Pokémon's body is its source of power.",
       "art_url": "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/059.png",
-      "types": ["fire"]
+      "types": ["fire"],
+      "weakness": ["ground", "water"]
     },
     {
       "id": 93,
@@ -57,5 +64,22 @@ export class PokescreenComponent implements OnInit {
 
   constructor() { }
   ngOnInit(): void {
+  }
+
+  displayBanner(pokemon: any): void{
+    this.description = pokemon.description;
+    this.image = pokemon.sprite;
+    this.hideBanner(true);
+  }
+
+  hideBanner(check):void{
+    this.isVisible = check;
+  }
+
+  showWeakness():void{
+    if(this.isWeaknessVisible)
+      this.isWeaknessVisible = false;
+    else
+      this.isWeaknessVisible = true;
   }
 }
