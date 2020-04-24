@@ -20,7 +20,7 @@ export class PComponentComponent implements OnInit {
       art_url:
         'http://assets22.pokemon.com/assets/cms2/img/pokedex/full/150.png',
       types: ['psychic'],
-      weak_to:['Psychic','Ghost'],
+      weak_to: ['Psychic', 'Ghost'],
     },
     {
       id: 151,
@@ -29,11 +29,12 @@ export class PComponentComponent implements OnInit {
         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png',
       description:
         'Mew is said to possess the genetic composition of all Pokémon. It is capable of making itself invisible at will, so it entirely avoids notice even if it approaches people.',
-      //art_url:
-        //'http://assets22.pokemon.com/assets/cms2/img/pokedex/full/151.png',
+      art_url:
+        'http://assets22.pokemon.com/assets/cms2/img/pokedex/full/151.png',
       types: ['psychic'],
-      weak_to:['Psychic','Ghost','Bug','Dark'],
-      art_urlA: "https://pbs.twimg.com/media/DoU9TS4UYAAKxtZ?format=jpg&name=small"
+      weak_to: ['Psychic', 'Ghost', 'Bug', 'Dark'],
+      art_urlA:
+        'https://pbs.twimg.com/media/DoU9TS4UYAAKxtZ?format=jpg&name=small',
     },
     {
       id: 144,
@@ -45,8 +46,9 @@ export class PComponentComponent implements OnInit {
       art_url:
         'http://assets22.pokemon.com/assets/cms2/img/pokedex/full/144.png',
       types: ['flying', 'ice'],
-      weak_to:['Rock','Fire'],
-      art_urlA: "https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png",
+      weak_to: ['Rock', 'Fire'],
+      art_urlA:
+        'https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png',
     },
     {
       id: 145,
@@ -58,7 +60,6 @@ export class PComponentComponent implements OnInit {
       art_url:
         'http://assets22.pokemon.com/assets/cms2/img/pokedex/full/145.png',
       types: ['flying', 'electric'],
-
     },
     {
       id: 146,
@@ -74,6 +75,17 @@ export class PComponentComponent implements OnInit {
   ];
 
   constructor() {}
-
+  mostrarPokemon: boolean;
+  pokemonSeleccionado: IPokemon;
   ngOnInit(): void {}
+
+  public MostrarInfo(pokemon: IPokemon): void {
+    this.mostrarPokemon = true;
+    this.pokemonSeleccionado = pokemon;
+  }
+
+  public OcultarInfo(): void {
+    this.mostrarPokemon = null;
+    this.pokemonSeleccionado = null;
+  }
 }
