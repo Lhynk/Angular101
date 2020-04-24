@@ -1,5 +1,18 @@
+<div *ngIf="mostrarPokemon" class="data">
+  <div class="data__container">
+    <!--cualquier propiedad u objeto en .ts se puede leer como si nada en los bindings-->
+    <img class="data__img" [src]="pokemonSeleccionado.sprite"/>
+    <div class="data__info" [innerHTML]="pokemonSeleccionado.description"></div>
+    <div class="data__close"(click)="OcultarInfo()" >X</div>
+  </div>
+</div>
+
 <div class="card-container">
-  <div class="pokemon" *ngFor="let pokemon of pokemones">
+  <div
+    class="pokemon"
+    *ngFor="let pokemon of pokemones"
+    (click)="MostrarInfo(pokemon)"
+  >
     <!--ngFor es un foreach, let *cualquierVariable* of *ArregloVariables*-->
     <!--*ngIf es una validacion de una exprecion, osease un if normal-->
     <div *ngIf="pokemon.art_url">
@@ -15,9 +28,16 @@
       />
     </div>
     <div class="pokemon__number">N.° {{ pokemon.id }}</div>
-    <div class="pokemon__types">Tipo: {{ pokemon.types }}</div>
+    <div class="pokemon__type">
+      <span [ngClass]="type" *ngFor="let type of pokemon.types">
+        {{ type }}
+      </span>
+    </div>
+
     <div class="pokemon__name pokemon__name--bold">{{ pokemon.name }}</div>
-    <div *ngIf="pokemon.weak_to" class="pokemon__weak">Debil contra: {{ pokemon.weak_to }}</div>
+    <div *ngIf="pokemon.weak_to" class="pokemon__weak">
+      Debil contra: {{ pokemon.weak_to }}
+    </div>
     <!--*ngIf="expresion booleana" lo que pasa si es verdad -->
   </div>
 </div>
