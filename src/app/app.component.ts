@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'pkd-root',
@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pokedex';
+  messageHeader: string;
+
+  receiveText(text: string): void
+  {
+    this.messageHeader = text;
+  }
 }

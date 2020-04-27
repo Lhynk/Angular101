@@ -1,0 +1,33 @@
+
+  .data {
+    background: gray;
+    margin: 1rem 2rem;
+    border-radius: 1rem;
+    color: white;
+    padding: 1rem;
+    position: relative;
+  
+    &__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    &__info {
+      padding: 1rem;
+      font-size: 1.1rem;
+    }
+  
+    &__img {
+      max-width: 5rem;
+    }
+  
+    &__close {
+      position: absolute;
+      right: 1rem;
+      top: 0.5rem;
+      color: black;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+  }

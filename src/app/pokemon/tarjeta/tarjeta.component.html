@@ -1,12 +1,39 @@
+<pkd-hint 
+  *ngIf="showPokemonClicked"
+  [pokemon]="pokemonClicked"
+  (onCloseHint)="pokemonClose()">
+</pkd-hint>
+
+<h1>{{textFromHeader}}</h1>
+
 <div class="card-container">
-  <div class="pokemon" *ngFor="let currentPokemon of pokemonList">
+  <div 
+    class="pokemon"
+    *ngFor="let currentPokemon of pokemonList"
+    (click)="pokemonSelect(currentPokemon)"
+  >
     <div *ngIf="currentPokemon.art_url">
       <img [src]="currentPokemon.art_url" class="pokemon__image pokemon__image--small" />
       <div class="pokemon__number">N.° {{ currentPokemon.id }}</div>
       <div class="pokemon__name pokemon__name--bold">{{ currentPokemon.name }}</div>
-      <div *ngIf="currentPokemon.weakness">
-        <div>{{ titleYes }} - {{currentPokemon.weakness }} </div>
+      <div class="pokemon__type"> 
+        <span [class]="currentType" *ngFor="let currentType of currentPokemon.types"> 
+          {{ currentType }}
+        </span>
+      </div>
+      <div class="btn" (click)="pokemonWeakness(currentPokemon)">
+        {{titleButton}}
+      </div>
+      <div class="pokemon__type" *ngIf="currentPokemon.showWeakness">
+        <span [class]="currentWeakness" *ngFor="let currentWeakness of currentPokemon.weakness" >
+          {{ currentWeakness }}
+        </span>
       </div>
     </div>
   </div>
+</div>
+<div>
+  <p>Test:</p>
+  <input type="text" [(ngModel)]="testTest"/>
+  <span> {{ testTest }} </span>
 </div>

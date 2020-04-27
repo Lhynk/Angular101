@@ -7,4 +7,5 @@ export interface pokemon
     art_url?: string;
     types: string[];
     weakness?: string[];
+    showWeakness: boolean;
 }

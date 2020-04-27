@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'pkd-menu',
@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
   title : string;
+  test: string;
+
+  @Output() onClick = new EventEmitter<string>(); 
+
 
   constructor() { 
     this.title = "Pokedex construtor";
@@ -15,4 +19,7 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  textCapture(): void {
+    this.onClick.emit(this.test);
+  }
 }
