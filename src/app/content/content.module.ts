@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PokescreenComponent } from './pokescreen/pokescreen.component';
+import { HintComponent } from './hint/hint.component';
 
 
 
 @NgModule({
-  declarations: [PokescreenComponent],
+  declarations: [PokescreenComponent, HintComponent],
   imports: [
     CommonModule
   ],

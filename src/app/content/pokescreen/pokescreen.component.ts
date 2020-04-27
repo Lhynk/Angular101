@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Pokemon } from './pokemon';
 
 @Component({
@@ -9,10 +9,11 @@ import { Pokemon } from './pokemon';
 export class PokescreenComponent implements OnInit {
   hayMensaje: boolean = true;
   mensaje: string = 'quién es ese pokemon?';
-  description: string = '';
+  description1: string = '';
   image: string = '';
   isVisible: boolean = false;
   isWeaknessVisible: boolean = false;
+  @Input() importedText:string;
 
   pokemons: Pokemon[] = [
     {
@@ -67,7 +68,7 @@ export class PokescreenComponent implements OnInit {
   }
 
   displayBanner(pokemon: any): void{
-    this.description = pokemon.description;
+    this.description1 = pokemon.description;
     this.image = pokemon.sprite;
     this.hideBanner(true);
   }

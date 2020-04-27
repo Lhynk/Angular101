@@ -1,0 +1,15 @@
+<div class="data">
+    <div class="data__container">
+        <div>
+            <img [src]="image" class="data__image" />
+        </div>
+        <p class="data__info">
+            {{description}}
+        </p>
+    </div>
+    <div 
+        class="data__close"
+        (click)="hideBanner(false)"
+    >(X)
+    </div>
+</div>

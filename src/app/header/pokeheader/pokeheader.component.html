@@ -1,4 +1,8 @@
 <div class="panel panel--header">
     <span class="pokedex"></span>
     <h1 class="title"> {{ title }} </h1>
+    <div>
+        <input class="input" type="text" [(ngModel)]="inputText">
+        <button class="btn" (click)="onClick()">Dale</button>
+    </div>
 </div>

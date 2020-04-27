@@ -1,22 +1,16 @@
 <div *ngIf="hayMensaje" class="pokemon__name pokemon__name--bold">{{mensaje}}</div>
 <div>
+    <h1>{{ importedText }}</h1>
+</div>
+<div>
     <button (click)="showWeakness()" class="button button3">Pokemon Weakness</button>
 </div>
-<div class="data" *ngIf="isVisible">
-    <div class="data__container">
-        <div>
-            <img [src]="image" class="data__image" />
-        </div>
-        <p class="data__info">
-            {{description}}
-        </p>
-    </div>
-    <div 
-        class="data__close"
-        (click)="hideBanner(false)"
-    >(X)
-    </div>
-</div>
+<pkd-hint 
+    *ngIf="isVisible" 
+    [description]="description1" 
+    [image]="image"
+    (onHide)="hideBanner($event)"
+></pkd-hint>
 <div class="card-container">
     <div 
     class="pokemon" 
@@ -48,6 +42,6 @@
 </div>
 <div *ngIf="false">
     <p class="pokemon__description">
-        {{ description }}
+        {{ description1 }}
     </p>
 </div>

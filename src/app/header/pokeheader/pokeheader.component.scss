@@ -18,3 +18,56 @@
       align-items: center;
     }
   }
+
+  .btn {
+    background: #30a7d7;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    max-width: 16rem;
+    width: 12rem;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 500;
+    margin: 0.6rem;
+    cursor: pointer;
+    transition: background 0.3s linear;
+  
+    &:hover {
+      background: #1b82b1;
+    }
+  
+    &--success {
+      background: #4dad5b;
+      &:hover {
+        background: #369143;
+      }
+    }
+  
+    &--warning {
+      background: #ee6b2f;
+      &:hover {
+        background: #da471b;
+      }
+    }
+  
+    &--error {
+      background: #e3350d;
+      &:hover {
+        background: #d1300c;
+      }
+    }
+  }
+
+  input {
+    line-height: 2.5rem;
+    background: #fafafa;
+    border-radius: 0.6rem;
+    padding: 0 1rem;
+    color: #666;
+    border: 2px solid gray;
+    margin: 1rem;
+  
+    &:focus {
+      border: 2px solid black;
+    }
+  }
