@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -10,8 +10,10 @@ export class AppComponent {
   title = 'pokedex';
   messageText:string = "";
   valor:string = "";
+  @Output() onMostrar = new EventEmitter<string>();
 
   showMessage(valor):void{
-    this.messageText = valor;
+    //this.messageText = valor;
+    this.onMostrar.emit(this.valor);
   }
 }

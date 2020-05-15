@@ -11,6 +11,11 @@
     [image]="image"
     (onHide)="hideBanner($event)"
 ></pkd-hint>
+<div class="text-left">
+    Filtrar Pokemon: <input class="input" type="number" [(ngModel)]="InputPokemon">
+    <button class="btn" (click)="findPokemon()">Buscar</button>
+    <button class="btn btn--warning" (click)="cleanPokemon()">Limpiar</button>
+</div> 
 <div class="card-container">
     <div 
     class="pokemon" 
@@ -19,8 +24,8 @@
     >
         <ng-container *ngIf="pokemon.art_url">
             <img [src]="pokemon.art_url" class="pokemon__image pokemon__image--small" />
-            <div class="pokemon__number">N.° {{ pokemon.id }}</div>
-            <div class="pokemon__name pokemon__name--bold">{{ pokemon.name }}</div>
+            <div class="pokemon__number">{{ pokemon.id | numberPokemon:true }}</div>
+            <div class="pokemon__name pokemon__name--bold">{{ pokemon.name | titlecase }}</div>
             <ng-container *ngIf="pokemon.types">
                 <div class="">Type:</div>
                     <div class="pokemon__type">
